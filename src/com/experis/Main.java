@@ -48,10 +48,7 @@ public class Main {
 
         display.createItems();
 
-        //Armor showcasing - Begin
-
-
-        //Armor showcasing - End
+        display.addItemsToHero();
 
 
 

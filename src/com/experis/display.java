@@ -146,5 +146,26 @@ public class display {
 
     }
 
+    public void addItemsToHero() {
+        System.out.println("Warrior details - Before:");
+        System.out.println("HP: " + warrior.getHealth());
+        System.out.println("Str: " + warrior.getStrength());
+        System.out.println("Dex: " + warrior.getDexterity());
+        System.out.println("Int: " + warrior.getIntelligence());
+        System.out.println("Lvl: " + warrior.getLevel());
+        System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+
+        warrior.addArmor(new IronMeshChest(5));
+        //warrior.addArmor(new FabricHat(20));
+
+        System.out.println("Warrior details - After:");
+        System.out.println("HP: " + warrior.getHealth());
+        System.out.println("Str: " + warrior.getStrength());
+        System.out.println("Dex: " + warrior.getDexterity());
+        System.out.println("Int: " + warrior.getIntelligence());
+        System.out.println("Lvl: " + warrior.getLevel());
+        System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+    }
+
 
 }

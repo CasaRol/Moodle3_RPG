@@ -53,44 +53,44 @@ public abstract class Hero {
         int level = armor.getLevel();
 
         if(placement.equalsIgnoreCase("BODY")) {
-            health = armor.getHealth() + (level * armor.getSCALE_HEALTH());
+            health = armor.getHealth() + armor.getSCALE_HEALTH();
             setHealth(this.health += health);
 
-            strength = armor.getStrength() + (level * armor.getSCALE_STRENGTH());
+            strength = armor.getStrength() + armor.getSCALE_STRENGTH();
             setStrength(this.strength += strength);
 
-            intelligence = armor.getIntelligence() + (level * armor.getSCALE_INTELLIGENCE());
+            intelligence = armor.getIntelligence() + armor.getSCALE_INTELLIGENCE();
             setIntelligence(this.intelligence += intelligence);
 
-            dexterity = armor.getDexterity() + (level * armor.getSCALE_DEXTERITY());
+            dexterity = armor.getDexterity() + armor.getSCALE_DEXTERITY();
             setDexterity(this.dexterity += dexterity);
         }
 
         if(placement.equalsIgnoreCase("HEAD")) {
-            health = (int) (armor.getHealth() + Math.floor((level * armor.getSCALE_HEALTH()) * 0.8));
+            health = (int) (armor.getHealth() + (Math.floor(armor.getSCALE_HEALTH()) * 0.8));
             setHealth(this.health += health);
 
-            strength = (int) (armor.getStrength() + Math.floor((level * armor.getSCALE_STRENGTH()) * 0.8));
+            strength = (int) (armor.getStrength() + (Math.floor(armor.getSCALE_STRENGTH()) * 0.8));
             setStrength(this.strength += strength);
 
-            intelligence = (int) (armor.getIntelligence() + Math.floor((level * armor.getSCALE_INTELLIGENCE()) * 0.8));
+            intelligence = (int) (armor.getIntelligence() + (Math.floor(armor.getSCALE_INTELLIGENCE()) * 0.8));
             setIntelligence(this.intelligence += intelligence);
 
-            dexterity = (int) (armor.getDexterity() + Math.floor((level * armor.getSCALE_DEXTERITY()) * 0.8));
+            dexterity = (int) (armor.getDexterity() + (Math.floor(armor.getSCALE_DEXTERITY()) * 0.8));
             setDexterity(this.dexterity += dexterity);
         }
 
         if(placement.equalsIgnoreCase("LEGS")) {
-            health = (int) (armor.getHealth() + Math.floor((level * armor.getSCALE_HEALTH()) * 0.6));
+            health = (int) (armor.getHealth() + (Math.floor(armor.getSCALE_HEALTH()) * 0.6));
             setHealth(this.health += health);
 
-            strength = (int) (armor.getStrength() + Math.floor((level * armor.getSCALE_STRENGTH()) * 0.6));
+            strength = (int) (armor.getStrength() + (Math.floor(armor.getSCALE_STRENGTH()) * 0.6));
             setStrength(this.strength += strength);
 
-            intelligence = (int) (armor.getIntelligence() + Math.floor((level * armor.getSCALE_INTELLIGENCE()) * 0.6));
+            intelligence = (int) (armor.getIntelligence() + (Math.floor(armor.getSCALE_INTELLIGENCE()) * 0.6));
             setIntelligence(this.intelligence += intelligence);
 
-            dexterity = (int) (armor.getDexterity() + Math.floor((level * armor.getSCALE_DEXTERITY()) * 0.6));
+            dexterity = (int) (armor.getDexterity() + (Math.floor(armor.getSCALE_DEXTERITY()) * 0.6));
             setDexterity(this.dexterity += dexterity);
         }
     }
