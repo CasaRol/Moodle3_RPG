@@ -3,34 +3,37 @@ package com.experis.weapons;
 public class TwoHandedSword extends Melee{
 
     int level;
-    int baseDamage;
-    String type;
+    String name;
     int totalDamage;
 
     public TwoHandedSword(int level) {
         this.level = level;
-        this.baseDamage = 15;
-        this.type = "2-handed longSword";
+        this.name = "2-handed longSword";
         this.totalDamage = calculateDamage();
     }
 
     private int calculateDamage() {
-        return baseDamage + (2 * level);
-    }
-
-    @Override
-    public String getType() {
-        return this.type;
+        return super.baseDamage + (2 * level);
     }
 
     @Override
     public int getDamage() {
-        return this.totalDamage;
+        return super.baseDamage;
     }
 
     @Override
     public int getTotalDamage() {
         return totalDamage;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
+    public int getLevel() {
+        return this.level;
     }
 
 

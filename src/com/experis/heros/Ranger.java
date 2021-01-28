@@ -2,7 +2,7 @@ package com.experis.heros;
 
 public class Ranger extends Hero{
 
-    public Ranger(int health, int strength, int dexterity, int intelligence) {
+    public Ranger() {
         super(120, 5, 10, 2);
     }
 

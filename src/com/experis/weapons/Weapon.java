@@ -7,4 +7,8 @@ public interface Weapon {
     public int getDamage();
 
     public int getTotalDamage();
+
+    public String getName();
+
+    public int getLevel();
 }

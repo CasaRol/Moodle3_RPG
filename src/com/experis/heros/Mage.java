@@ -3,7 +3,7 @@ package com.experis.heros;
 public class Mage extends Hero{
 
 
-    public Mage(int health, int strength, int dexterity, int intelligence) {
+    public Mage() {
         super(100, 2, 3, 10);
     }
 

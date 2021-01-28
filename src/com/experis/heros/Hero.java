@@ -100,9 +100,7 @@ public abstract class Hero {
     }
 
     public void addWeapon(Weapon weapon) {
-        System.out.println("Hero damage before = " + this.damage);
         addWeaponStats(weapon);
-        System.out.println("Hero damage = " + this.damage);
         this.weapon = weapon;
     }
 
@@ -177,6 +175,11 @@ public abstract class Hero {
 
                 setMaxExp(Math.round(maxExp * 1.1));
 
+                //Re-calculating damage for character as long as weapon is equipped
+                if(this.weapon != null) {
+                    addWeaponStats(this.weapon);
+                }
+
             }
         } else {
             this.exp += exp;
@@ -189,5 +192,13 @@ public abstract class Hero {
 
     public void setMaxExp(double maxExp) {
         this.maxExp = maxExp;
+    }
+
+    public Weapon getWeapon() {
+        return this.weapon;
+    }
+
+    public String getWeaponName() {
+        return this.weapon.getName();
     }
 }
