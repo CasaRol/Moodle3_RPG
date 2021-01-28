@@ -104,20 +104,21 @@ public abstract class Hero {
         this.weapon = weapon;
     }
 
-    public void addArmorHead(Armor armor) {
-        addArmorStats(armor, "HEAD");
-        this.head = armor;
+    public void addArmor(Armor armor) {
+        if(armor.getPlacement().equalsIgnoreCase("HEAD")) {
+            addArmorStats(armor, "HEAD");
+            this.head = armor;
+        } else if(armor.getPlacement().equalsIgnoreCase("BODY")) {
+            addArmorStats(armor, "BODY");
+            this.body = armor;
+        } else if(armor.getPlacement().equalsIgnoreCase("LEGS")) {
+            addArmorStats(armor, "LEGS");
+            this.legs = armor;
+        } else {
+            //Should never reach this
+            System.out.println("Incompatible armor type");
+        }
 
-    }
-
-    public void addArmorBody(Armor armor) {
-        addArmorStats(armor, "BODY");
-        this.body = armor;
-    }
-
-    public void addArmorLegs(Armor armor) {
-        addArmorStats(armor, "LEGS");
-        this.legs = armor;
     }
 
 
@@ -200,5 +201,9 @@ public abstract class Hero {
 
     public String getWeaponName() {
         return this.weapon.getName();
+    }
+
+    public Armor getBody() {
+        return this.body;
     }
 }

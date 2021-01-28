@@ -1,9 +1,6 @@
 package com.experis;
 
-import com.experis.amor.Armor;
-import com.experis.amor.ClothArmor;
-import com.experis.amor.LeatherArmor;
-import com.experis.amor.PlateArmor;
+import com.experis.amor.*;
 import com.experis.heros.Hero;
 import com.experis.heros.Mage;
 import com.experis.heros.Ranger;
@@ -15,11 +12,11 @@ import com.experis.weapons.Weapon;
 
 public class display {
 
-    private Hero warrior = new Warrior();
-    private Hero mage= new Mage();
-    private Hero ranger = new Ranger();
+    private final Hero warrior = new Warrior();
+    private final Hero mage= new Mage();
+    private final Hero ranger = new Ranger();
 
-    public void diplayLeveling() {
+    public void displayLeveling() {
         //Leveling showcased - Begin
         System.out.println("Warrior details (plain):");
         System.out.println("HP: " + warrior.getHealth());
@@ -87,8 +84,8 @@ public class display {
 
         System.out.println("ARMOR");
 
-        Armor cloth = new ClothArmor(5);
-        System.out.println("Item stats for: Cloth Armor");
+        Armor cloth = new FabricHat(5);
+        System.out.println("Item stats for: " + cloth.getName());
         System.out.println("Armor type: " + cloth.getType());
         System.out.println("Armor level: " + cloth.getLevel());
         System.out.println("Bonus HP: +" + cloth.getSCALE_HEALTH());
@@ -98,8 +95,8 @@ public class display {
 
         System.out.println(" ");
 
-        Armor leather = new LeatherArmor(10);
-        System.out.println("Item stats for: Leather Armor");
+        Armor leather = new LeatherLeggings(10);
+        System.out.println("Item stats for: " + leather.getName());
         System.out.println("Armor type: " + leather.getType());
         System.out.println("Armor level: " + leather.getLevel());
         System.out.println("Bonus HP: +" + leather.getSCALE_HEALTH());
@@ -109,8 +106,8 @@ public class display {
 
         System.out.println(" ");
 
-        Armor plate = new PlateArmor(15);
-        System.out.println("Item stats for: Leather Armor");
+        Armor plate = new IronMeshChest(15);
+        System.out.println("Item stats for: " + plate.getName());
         System.out.println("Armor type: " + plate.getType());
         System.out.println("Armor level: " + plate.getLevel());
         System.out.println("Bonus HP: +" + plate.getSCALE_HEALTH());
@@ -148,4 +145,6 @@ public class display {
         System.out.println("Weapon damage: " + wand.getTotalDamage());
 
     }
+
+
 }

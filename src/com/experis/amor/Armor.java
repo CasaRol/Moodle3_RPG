@@ -21,4 +21,8 @@ public interface Armor {
     int getSCALE_DEXTERITY();
 
     int getSCALE_INTELLIGENCE();
+
+    String getPlacement();
+
+    String getName();
 }

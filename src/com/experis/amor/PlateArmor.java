@@ -1,6 +1,6 @@
 package com.experis.amor;
 
-public class PlateArmor implements Armor {
+public abstract class PlateArmor implements Armor {
 
     private int level;
     private String type;
@@ -71,6 +71,11 @@ public class PlateArmor implements Armor {
     @Override
     public int getSCALE_INTELLIGENCE() {
         return this.SCALE_INTELLIGENCE * level;
+    }
+
+    @Override
+    public String getPlacement() {
+        return null;
     }
 
 

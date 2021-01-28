@@ -1,6 +1,6 @@
 package com.experis.amor;
 
-public class LeatherArmor implements Armor {
+public abstract class LeatherArmor implements Armor {
 
     private int level;
     private String type;
@@ -53,18 +53,22 @@ public class LeatherArmor implements Armor {
         return this.intelligence;
     }
 
+    @Override
     public int getSCALE_HEALTH() {
         return SCALE_HEALTH * level;
     }
 
+    @Override
     public int getSCALE_STRENGTH() {
         return SCALE_STRENGTH * level;
     }
 
+    @Override
     public int getSCALE_DEXTERITY() {
         return SCALE_DEXTERITY * level;
     }
 
+    @Override
     public int getSCALE_INTELLIGENCE() {
         return SCALE_INTELLIGENCE * level;
     }

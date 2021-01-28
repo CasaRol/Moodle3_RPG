@@ -1,9 +1,6 @@
 package com.experis;
 
-import com.experis.amor.Armor;
-import com.experis.amor.ClothArmor;
-import com.experis.amor.LeatherArmor;
-import com.experis.amor.PlateArmor;
+import com.experis.amor.*;
 import com.experis.heros.Hero;
 import com.experis.heros.Warrior;
 import com.experis.weapons.LesserMagicWand;
@@ -17,13 +14,14 @@ public class Main {
         Hero test = new Warrior();
         test.addWeapon(new LesserMagicWand(5));
 
-        Armor plateArmor = new PlateArmor(5);
+        Armor plateArmor = new IronMeshChest(5);
         System.out.println(plateArmor.getType());
+        test.addArmor(plateArmor);
 
-        Armor clothArmor = new ClothArmor(5);
+        Armor clothArmor = new FabricHat(5);
         System.out.println(clothArmor.getType());
 
-        Armor leatherArmor = new LeatherArmor(5);
+        Armor leatherArmor = new LeatherLeggings(5);
         System.out.println(leatherArmor.getType());
 
         Weapon lmw = new LesserMagicWand(5);
@@ -46,7 +44,7 @@ public class Main {
 
         display display = new display();
 
-        display.diplayLeveling();
+        display.displayLeveling();
 
         display.createItems();
 

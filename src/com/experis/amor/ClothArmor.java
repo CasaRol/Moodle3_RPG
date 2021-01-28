@@ -2,7 +2,7 @@ package com.experis.amor;
 
 import java.util.Scanner;
 
-public class ClothArmor implements Armor {
+public abstract class ClothArmor implements Armor {
 
     private int level;
     private String type;
