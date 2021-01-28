@@ -3,6 +3,7 @@ package com.experis.amor;
 public class PlateArmor implements Armor {
 
     private int level;
+    private String type;
     private int health;
     private int strength;
     private int dexterity;
@@ -15,6 +16,7 @@ public class PlateArmor implements Armor {
 
     public PlateArmor(int level) {
         this.level = level;
+        this.type = "Plate Armor";
         this.health = 30;
         this.strength = 3;
         this.dexterity = 1;
@@ -24,6 +26,11 @@ public class PlateArmor implements Armor {
     @Override
     public int getLevel() {
         return this.level;
+    }
+
+    @Override
+    public String getType() {
+        return this.type;
     }
 
     @Override
@@ -48,22 +55,22 @@ public class PlateArmor implements Armor {
 
     @Override
     public int getSCALE_HEALTH() {
-        return this.SCALE_HEALTH;
+        return this.SCALE_HEALTH * level;
     }
 
     @Override
     public int getSCALE_STRENGTH() {
-        return this.SCALE_STRENGTH;
+        return this.SCALE_STRENGTH * level;
     }
 
     @Override
     public int getSCALE_DEXTERITY() {
-        return this.SCALE_DEXTERITY;
+        return this.SCALE_DEXTERITY * level;
     }
 
     @Override
     public int getSCALE_INTELLIGENCE() {
-        return this.SCALE_INTELLIGENCE;
+        return this.SCALE_INTELLIGENCE * level;
     }
 
 

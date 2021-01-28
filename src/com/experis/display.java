@@ -1,9 +1,17 @@
 package com.experis;
 
+import com.experis.amor.Armor;
+import com.experis.amor.ClothArmor;
+import com.experis.amor.LeatherArmor;
+import com.experis.amor.PlateArmor;
 import com.experis.heros.Hero;
 import com.experis.heros.Mage;
 import com.experis.heros.Ranger;
 import com.experis.heros.Warrior;
+import com.experis.weapons.LesserMagicWand;
+import com.experis.weapons.Philosopher;
+import com.experis.weapons.TwoHandedSword;
+import com.experis.weapons.Weapon;
 
 public class display {
 
@@ -72,6 +80,72 @@ public class display {
         System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
 
         //leveling showcased - End
+
+    }
+
+    public void createItems() {
+
+        System.out.println("ARMOR");
+
+        Armor cloth = new ClothArmor(5);
+        System.out.println("Item stats for: Cloth Armor");
+        System.out.println("Armor type: " + cloth.getType());
+        System.out.println("Armor level: " + cloth.getLevel());
+        System.out.println("Bonus HP: +" + cloth.getSCALE_HEALTH());
+        System.out.println("Bonus Str: +" + cloth.getSCALE_STRENGTH());
+        System.out.println("Bonus Dex: +" + cloth.getSCALE_DEXTERITY());
+        System.out.println("Bonus intel: +" + cloth.getSCALE_INTELLIGENCE());
+
+        System.out.println(" ");
+
+        Armor leather = new LeatherArmor(10);
+        System.out.println("Item stats for: Leather Armor");
+        System.out.println("Armor type: " + leather.getType());
+        System.out.println("Armor level: " + leather.getLevel());
+        System.out.println("Bonus HP: +" + leather.getSCALE_HEALTH());
+        System.out.println("Bonus Str: +" + leather.getSCALE_STRENGTH());
+        System.out.println("Bonus Dex: +" + leather.getSCALE_DEXTERITY());
+        System.out.println("Bonus intel: +" + leather.getSCALE_INTELLIGENCE());
+
+        System.out.println(" ");
+
+        Armor plate = new PlateArmor(15);
+        System.out.println("Item stats for: Leather Armor");
+        System.out.println("Armor type: " + plate.getType());
+        System.out.println("Armor level: " + plate.getLevel());
+        System.out.println("Bonus HP: +" + plate.getSCALE_HEALTH());
+        System.out.println("Bonus Str: +" + plate.getSCALE_STRENGTH());
+        System.out.println("Bonus Dex: +" + plate.getSCALE_DEXTERITY());
+        System.out.println("Bonus intel: +" + plate.getSCALE_INTELLIGENCE());
+
+        System.out.println(" ");
+
+        System.out.println("WEAPONS");
+
+        Weapon sword = new TwoHandedSword(5);
+
+        System.out.println("Item stats for: " + sword.getName());
+        System.out.println("Weapon type: " + sword.getType());
+        System.out.println("Weapon level: " + sword.getLevel());
+        System.out.println("Weapon damage: " + sword.getTotalDamage());
+
+        System.out.println(" ");
+
+        Weapon bow = new Philosopher(20);
+
+        System.out.println("Item stats for: " + bow.getName());
+        System.out.println("Weapon type: " + bow.getType());
+        System.out.println("Weapon level: " + bow.getLevel());
+        System.out.println("Weapon damage: " + bow.getTotalDamage());
+
+        System.out.println(" ");
+
+        Weapon wand = new LesserMagicWand(15);
+
+        System.out.println("Item stats for: " + wand.getName());
+        System.out.println("Weapon type: " + wand.getType());
+        System.out.println("Weapon level: " + wand.getLevel());
+        System.out.println("Weapon damage: " + wand.getTotalDamage());
 
     }
 }

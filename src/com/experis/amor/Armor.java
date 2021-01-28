@@ -4,6 +4,8 @@ public interface Armor {
 
     int getLevel();
 
+    String getType();
+
     int getHealth();
 
     int getStrength();

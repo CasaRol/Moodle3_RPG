@@ -8,7 +8,7 @@ public class Philosopher extends Ranged {
 
     public Philosopher(int level) {
         this.level = level;
-        this.name = "2-handed longSword";
+        this.name = "The Philosopher";
         this.totalDamage = calculateDamage();
     }
 
@@ -23,16 +23,16 @@ public class Philosopher extends Ranged {
 
     @Override
     public int getTotalDamage() {
-        return 0;
+        return this.totalDamage;
     }
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
     public int getLevel() {
-        return 0;
+        return this.level;
     }
 }
