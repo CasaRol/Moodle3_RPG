@@ -23,7 +23,6 @@ public class Main {
 
         warrior.setExp(1207);
 
-
         System.out.println("Warrior details (leveled):");
         System.out.println("HP: " + warrior.getHealth());
         System.out.println("Str: " + warrior.getStrength());
