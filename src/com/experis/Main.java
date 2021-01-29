@@ -4,6 +4,7 @@ import com.experis.amor.*;
 import com.experis.heros.Hero;
 import com.experis.heros.Warrior;
 import com.experis.weapons.LesserMagicWand;
+import com.experis.weapons.TwoHandedSword;
 import com.experis.weapons.Weapon;
 
 public class Main {
@@ -12,7 +13,6 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Hero test = new Warrior();
-        test.addWeapon(new LesserMagicWand(5));
 
         System.out.println("test details:");
         System.out.println("HP: " + test.getHealth());
@@ -35,7 +35,7 @@ public class Main {
         System.out.println("Lvl: " + test.getLevel());
         System.out.println("XP to next: " + (test.getMaxExp() - test.getExp()));
 
-        Armor newPlate = new IronMeshChest(1);
+        Armor newPlate = new IronMeshChest(2);
         test.addArmor(newPlate);
 
         System.out.println("test details:");
@@ -52,12 +52,14 @@ public class Main {
         Armor leatherArmor = new LeatherLeggings(5);
         System.out.println(leatherArmor.getType());
 
-        Weapon lmw = new LesserMagicWand(5);
+        Weapon lmw = new TwoHandedSword(40);
 
+
+        test.attack();
         test.addWeapon(lmw);
 
-        System.out.println(test.getWeapon().getName());
-        System.out.println(test.getWeapon().getLevel());
+        //System.out.println(test.getWeapon().getName());
+        //System.out.println(test.getWeapon().getLevel());
 
         test.attack();
         test.setExp(1000);

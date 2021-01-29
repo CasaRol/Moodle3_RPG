@@ -16,7 +16,7 @@ public abstract class Hero {
     Armor head;
     Armor body;
     Armor legs;
-    int damage;
+    int damage = 0;
 
 
     public Hero(int health, int strength, int dexterity, int intelligence) {
@@ -34,7 +34,11 @@ public abstract class Hero {
     }
 
     public void attack() {
-        System.out.println("Hero attacked for " + damage + "HP using " + this.weapon.getType());
+        if(this.weapon == null) {
+            System.out.println("Hero attacked for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
+        } else {
+            System.out.println("Hero attacked for " + damage + "HP using " + this.weapon.getType());
+        }
     }
 
     private void addArmorStats(Armor armor, String placement) {
@@ -121,7 +125,7 @@ public abstract class Hero {
 
     private void addWeaponStats(Weapon weapon) {
         if(this.weapon != null) {
-            this.damage -= (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
+            this.damage -= (int) Math.round(this.weapon.getTotalDamage() + (strength * 1.5));
         }
         this.damage += (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
     }
