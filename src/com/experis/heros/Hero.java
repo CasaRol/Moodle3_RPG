@@ -27,13 +27,6 @@ public abstract class Hero {
         this.level = 1;
         this.exp = 0;
         this.maxExp = 100;
-        /*
-        this.weapon = null;
-        this.head = null;
-        this.body = null;
-        this.legs = null;
-
-         */
     }
 
     public void levelUp() {
@@ -46,12 +39,43 @@ public abstract class Hero {
 
     private void addArmorStats(Armor armor, String placement) {
 
-        int health = 0;
-        int strength = 0;
-        int intelligence = 0;
-        int dexterity = 0;
-        int level = armor.getLevel();
 
+        //Removing current stats from armor (should be separate method)
+        if(placement.equalsIgnoreCase("HEAD")) {
+            System.out.println("CHECKING HEAD");
+            if(head != null) {
+                System.out.println("HEAD FOUND EQUIPED");
+                this.health -= (int) (head.getHealth() + (Math.floor(head.getSCALE_HEALTH()) * 0.8));
+                this.strength -= (int) (head.getStrength() + (Math.floor(head.getSCALE_STRENGTH()) * 0.8));
+                this.intelligence -= (int) (head.getIntelligence() + (Math.floor(head.getSCALE_INTELLIGENCE()) * 0.8));
+                this.dexterity -= (int) (head.getDexterity() + (Math.floor(head.getSCALE_DEXTERITY()) * 0.8));
+            }
+        } else if(placement.equalsIgnoreCase("BODY")) {
+            System.out.println("CHECKING BODY");
+            if(body != null) {
+                System.out.println("BODY FOUND EQUIPED");
+                this.health -= (body.getHealth() + body.getSCALE_HEALTH());
+                this.strength -= (body.getStrength() + body.getSCALE_STRENGTH());
+                this.intelligence -= (body.getIntelligence() + body.getSCALE_INTELLIGENCE());
+                this.dexterity -= (body.getDexterity() + body.getSCALE_DEXTERITY());
+            }
+        } else if(placement.equalsIgnoreCase("LEGS")) {
+            System.out.println("CHEKCING LEGS");
+            if(legs != null) {
+                System.out.println("LEGS FOUND EQUIPED");
+                this.health -= (int) (legs.getHealth() + (Math.floor(legs.getSCALE_HEALTH()) * 0.6));
+                this.strength -= (int) (legs.getStrength() + (Math.floor(legs.getSCALE_STRENGTH()) * 0.6));
+                this.intelligence -= (int) (legs.getIntelligence() + (Math.floor(legs.getSCALE_INTELLIGENCE()) * 0.6));
+                this.dexterity -= (int) (legs.getDexterity() + (Math.floor(legs.getSCALE_DEXTERITY()) * 0.6));
+            }
+        }
+
+        int health;
+        int strength;
+        int intelligence;
+        int dexterity;
+
+        //Setting new stats
         if(placement.equalsIgnoreCase("BODY")) {
             health = armor.getHealth() + armor.getSCALE_HEALTH();
             setHealth(this.health += health);
@@ -96,7 +120,10 @@ public abstract class Hero {
     }
 
     private void addWeaponStats(Weapon weapon) {
-        this.damage = (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
+        if(this.weapon != null) {
+            this.damage -= (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
+        }
+        this.damage += (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
     }
 
     public void addWeapon(Weapon weapon) {
