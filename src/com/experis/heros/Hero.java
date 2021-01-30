@@ -17,6 +17,7 @@ public abstract class Hero {
     Armor body;
     Armor legs;
     int damage = 0;
+    String type;
 
 
     public Hero(int health, int strength, int dexterity, int intelligence) {
@@ -34,45 +35,15 @@ public abstract class Hero {
     }
 
     public void attack() {
-        if(this.weapon == null) {
-            System.out.println("Hero attacked for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
-        } else {
-            System.out.println("Hero attacked for " + damage + "HP using " + this.weapon.getType());
-        }
+        System.out.println("Overwritten method this should not print");
     }
 
     private void addArmorStats(Armor armor, String placement) {
 
 
-        //Removing current stats from armor (should be separate method)
-        if(placement.equalsIgnoreCase("HEAD")) {
-            System.out.println("CHECKING HEAD");
-            if(head != null) {
-                System.out.println("HEAD FOUND EQUIPED");
-                this.health -= (int) (head.getHealth() + (Math.floor(head.getSCALE_HEALTH()) * 0.8));
-                this.strength -= (int) (head.getStrength() + (Math.floor(head.getSCALE_STRENGTH()) * 0.8));
-                this.intelligence -= (int) (head.getIntelligence() + (Math.floor(head.getSCALE_INTELLIGENCE()) * 0.8));
-                this.dexterity -= (int) (head.getDexterity() + (Math.floor(head.getSCALE_DEXTERITY()) * 0.8));
-            }
-        } else if(placement.equalsIgnoreCase("BODY")) {
-            System.out.println("CHECKING BODY");
-            if(body != null) {
-                System.out.println("BODY FOUND EQUIPED");
-                this.health -= (body.getHealth() + body.getSCALE_HEALTH());
-                this.strength -= (body.getStrength() + body.getSCALE_STRENGTH());
-                this.intelligence -= (body.getIntelligence() + body.getSCALE_INTELLIGENCE());
-                this.dexterity -= (body.getDexterity() + body.getSCALE_DEXTERITY());
-            }
-        } else if(placement.equalsIgnoreCase("LEGS")) {
-            System.out.println("CHEKCING LEGS");
-            if(legs != null) {
-                System.out.println("LEGS FOUND EQUIPED");
-                this.health -= (int) (legs.getHealth() + (Math.floor(legs.getSCALE_HEALTH()) * 0.6));
-                this.strength -= (int) (legs.getStrength() + (Math.floor(legs.getSCALE_STRENGTH()) * 0.6));
-                this.intelligence -= (int) (legs.getIntelligence() + (Math.floor(legs.getSCALE_INTELLIGENCE()) * 0.6));
-                this.dexterity -= (int) (legs.getDexterity() + (Math.floor(legs.getSCALE_DEXTERITY()) * 0.6));
-            }
-        }
+        //Removing current stats from armor
+        removeArmorStats(placement);
+
 
         int health;
         int strength;
@@ -124,9 +95,9 @@ public abstract class Hero {
     }
 
     private void addWeaponStats(Weapon weapon) {
-        if(this.weapon != null) {
-            this.damage -= (int) Math.round(this.weapon.getTotalDamage() + (strength * 1.5));
-        }
+        //Removing current weapon stats from Hero
+        removeWeaponStats();
+
         this.damage += (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
     }
 
@@ -150,6 +121,40 @@ public abstract class Hero {
             System.out.println("Incompatible armor type");
         }
 
+    }
+
+    private void removeArmorStats(String placement) {
+        if(placement.equalsIgnoreCase("HEAD")) {
+            if(head != null) {
+                System.out.println("HEAD FOUND EQUIPPED");
+                this.health -= (int) (head.getHealth() + (Math.floor(head.getSCALE_HEALTH()) * 0.8));
+                this.strength -= (int) (head.getStrength() + (Math.floor(head.getSCALE_STRENGTH()) * 0.8));
+                this.intelligence -= (int) (head.getIntelligence() + (Math.floor(head.getSCALE_INTELLIGENCE()) * 0.8));
+                this.dexterity -= (int) (head.getDexterity() + (Math.floor(head.getSCALE_DEXTERITY()) * 0.8));
+            }
+        } else if(placement.equalsIgnoreCase("BODY")) {
+            if(body != null) {
+                System.out.println("BODY FOUND EQUIPPED");
+                this.health -= (body.getHealth() + body.getSCALE_HEALTH());
+                this.strength -= (body.getStrength() + body.getSCALE_STRENGTH());
+                this.intelligence -= (body.getIntelligence() + body.getSCALE_INTELLIGENCE());
+                this.dexterity -= (body.getDexterity() + body.getSCALE_DEXTERITY());
+            }
+        } else if(placement.equalsIgnoreCase("LEGS")) {
+            if(legs != null) {
+                System.out.println("LEGS FOUND EQUIPPED");
+                this.health -= (int) (legs.getHealth() + (Math.floor(legs.getSCALE_HEALTH()) * 0.6));
+                this.strength -= (int) (legs.getStrength() + (Math.floor(legs.getSCALE_STRENGTH()) * 0.6));
+                this.intelligence -= (int) (legs.getIntelligence() + (Math.floor(legs.getSCALE_INTELLIGENCE()) * 0.6));
+                this.dexterity -= (int) (legs.getDexterity() + (Math.floor(legs.getSCALE_DEXTERITY()) * 0.6));
+            }
+        }
+    }
+
+    private void removeWeaponStats() {
+        if(this.weapon != null) {
+            this.damage -= (int) Math.round(this.weapon.getTotalDamage() + (strength * 1.5));
+        }
     }
 
 
@@ -225,6 +230,8 @@ public abstract class Hero {
     public void setMaxExp(double maxExp) {
         this.maxExp = maxExp;
     }
+
+    //Redundant test methods below here
 
     public Weapon getWeapon() {
         return this.weapon;

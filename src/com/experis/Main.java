@@ -7,80 +7,57 @@ import com.experis.weapons.LesserMagicWand;
 import com.experis.weapons.TwoHandedSword;
 import com.experis.weapons.Weapon;
 
+import java.util.Scanner;
+
 public class Main {
 
 
     public static void main(String[] args) {
 	// write your code here
-        Hero test = new Warrior();
 
-        System.out.println("test details:");
-        System.out.println("HP: " + test.getHealth());
-        System.out.println("Str: " + test.getStrength());
-        System.out.println("Dex: " + test.getDexterity());
-        System.out.println("Int: " + test.getIntelligence());
-        System.out.println("Lvl: " + test.getLevel());
-        System.out.println("XP to next: " + (test.getMaxExp() - test.getExp()));
+        while(true) {
+            display display = new display();
+            Scanner scan = new Scanner(System.in);
 
-        Armor plateArmor = new IronMeshChest(19);
+            System.out.println("1: Generate Characters");
+            System.out.println("2: Create weapons and Armor");
+            System.out.println("3: Equip items to character");
+            System.out.println("4: Change equipment on character");
+            System.out.println("5: Simulate attack");
 
-        test.addArmor(plateArmor);
-        System.out.println("ARMOR " + test.getBody().getPlacement());
-
-        System.out.println("test details: ");
-        System.out.println("HP: " + test.getHealth());
-        System.out.println("Str: " + test.getStrength());
-        System.out.println("Dex: " + test.getDexterity());
-        System.out.println("Int: " + test.getIntelligence());
-        System.out.println("Lvl: " + test.getLevel());
-        System.out.println("XP to next: " + (test.getMaxExp() - test.getExp()));
-
-        Armor newPlate = new IronMeshChest(2);
-        test.addArmor(newPlate);
-
-        System.out.println("test details:");
-        System.out.println("HP: " + test.getHealth());
-        System.out.println("Str: " + test.getStrength());
-        System.out.println("Dex: " + test.getDexterity());
-        System.out.println("Int: " + test.getIntelligence());
-        System.out.println("Lvl: " + test.getLevel());
-        System.out.println("XP to next: " + (test.getMaxExp() - test.getExp()));
-
-        Armor clothArmor = new FabricHat(5);
-        System.out.println(clothArmor.getType());
-
-        Armor leatherArmor = new LeatherLeggings(5);
-        System.out.println(leatherArmor.getType());
-
-        Weapon lmw = new TwoHandedSword(40);
-
-
-        test.attack();
-        test.addWeapon(lmw);
-
-        //System.out.println(test.getWeapon().getName());
-        //System.out.println(test.getWeapon().getLevel());
-
-        test.attack();
-        test.setExp(1000);
-        System.out.println(test.getLevel());
-
-        /*
-
-        test.attack();
-        System.out.println("________________________________________________________________________________");
-
-        display display = new display();
-
-        display.displayLeveling();
-
-        display.createItems();
-
-        display.addItemsToHero();
+            switch(scan.nextInt()) {
+                case 1:
+                    System.out.println("____________________");
+                    display.displayLeveling();
+                    System.out.println("____________________");
+                    break;
+                case 2:
+                    System.out.println("____________________");
+                    display.createItems();
+                    System.out.println("____________________");
+                    break;
+                case 3:
+                    System.out.println("____________________");
+                    display.addItemsToHero();
+                    System.out.println("____________________");
+                    break;
+                case 4:
+                    System.out.println("____________________");
+                    display.changeEquipment();
+                    System.out.println("____________________");
+                    break;
+                case 5:
+                    System.out.println("____________________");
+                    display.attacking();
+                    System.out.println("____________________");
+                    break;
+                case 999:
+                    System.exit(0);
+            }
+        }
 
 
 
-         */
 
 
 

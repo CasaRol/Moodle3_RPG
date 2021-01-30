@@ -17,6 +17,9 @@ public class display {
     private final Hero ranger = new Ranger();
 
     public void displayLeveling() {
+        Hero warrior = new Warrior();
+        Hero mage= new Mage();
+        Hero ranger = new Ranger();
         //Leveling showcased - Begin
         System.out.println("Warrior details (plain):");
         System.out.println("HP: " + warrior.getHealth());
@@ -26,7 +29,10 @@ public class display {
         System.out.println("Lvl: " + warrior.getLevel());
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
 
+        System.out.println(" ");
         warrior.setExp(1207);
+        System.out.println("Rewarding given: 1207exp");
+        System.out.println(" ");
 
         System.out.println("Warrior details (leveled):");
         System.out.println("HP: " + warrior.getHealth());
@@ -46,7 +52,10 @@ public class display {
         System.out.println("Lvl: " + mage.getLevel());
         System.out.println("XP to next: " + (mage.getMaxExp() - mage.getExp()));
 
+        System.out.println(" ");
         mage.setExp(1207);
+        System.out.println("Rewarding given: 1207exp");
+        System.out.println(" ");
 
         System.out.println("Mage details (leveled):");
         System.out.println("HP: " + mage.getHealth());
@@ -66,7 +75,10 @@ public class display {
         System.out.println("Lvl: " + ranger.getLevel());
         System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
 
+        System.out.println(" ");
         ranger.setExp(1207);
+        System.out.println("Rewarding given: 1207exp");
+        System.out.println(" ");
 
         System.out.println("Ranger details (leveled):");
         System.out.println("HP: " + ranger.getHealth());
@@ -147,6 +159,13 @@ public class display {
     }
 
     public void addItemsToHero() {
+
+        System.out.println("ADDING ITEMS TO HERO'S");
+
+        Hero warrior = new Warrior();
+        Hero mage= new Mage();
+        Hero ranger = new Ranger();
+
         System.out.println("Warrior details - Before:");
         System.out.println("HP: " + warrior.getHealth());
         System.out.println("Str: " + warrior.getStrength());
@@ -155,8 +174,12 @@ public class display {
         System.out.println("Lvl: " + warrior.getLevel());
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
 
-        warrior.addArmor(new IronMeshChest(5));
-        //warrior.addArmor(new FabricHat(20));
+        System.out.println("Adding iron mesh chest");
+        warrior.addArmor(new IronMeshChest(2));
+        System.out.println("Adding fabric hat");
+        warrior.addArmor(new FabricHat(5));
+        System.out.println("Adding leather leggings");
+        warrior.addArmor(new LeatherLeggings(1));
 
         System.out.println("Warrior details - After:");
         System.out.println("HP: " + warrior.getHealth());
@@ -165,6 +188,106 @@ public class display {
         System.out.println("Int: " + warrior.getIntelligence());
         System.out.println("Lvl: " + warrior.getLevel());
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+
+        System.out.println(" ");
+
+        System.out.println("Mage details - Before:");
+        System.out.println("HP: " + mage.getHealth());
+        System.out.println("Str: " + mage.getStrength());
+        System.out.println("Dex: " + mage.getDexterity());
+        System.out.println("Int: " + mage.getIntelligence());
+        System.out.println("Lvl: " + mage.getLevel());
+        System.out.println("XP to next: " + (mage.getMaxExp() - mage.getExp()));
+
+        System.out.println("Adding iron mesh chest");
+        mage.addArmor(new IronMeshChest(2));
+        System.out.println("Adding fabric hat");
+        mage.addArmor(new FabricHat(5));
+        System.out.println("Adding leather leggings");
+        mage.addArmor(new LeatherLeggings(1));
+
+        System.out.println("Mage details - After:");
+        System.out.println("HP: " + mage.getHealth());
+        System.out.println("Str: " + mage.getStrength());
+        System.out.println("Dex: " + mage.getDexterity());
+        System.out.println("Int: " + mage.getIntelligence());
+        System.out.println("Lvl: " + mage.getLevel());
+        System.out.println("XP to next: " + (mage.getMaxExp() - mage.getExp()));
+
+        System.out.println(" ");
+
+        System.out.println("Ranger details - Before:");
+        System.out.println("HP: " + ranger.getHealth());
+        System.out.println("Str: " + ranger.getStrength());
+        System.out.println("Dex: " + ranger.getDexterity());
+        System.out.println("Int: " + ranger.getIntelligence());
+        System.out.println("Lvl: " + ranger.getLevel());
+        System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
+
+        System.out.println("Adding iron mesh chest");
+        ranger.addArmor(new IronMeshChest(2));
+        System.out.println("Adding fabric hat");
+        ranger.addArmor(new FabricHat(5));
+        System.out.println("Adding leather leggings");
+        ranger.addArmor(new LeatherLeggings(1));
+
+        System.out.println("Ranger details - After:");
+        System.out.println("HP: " + ranger.getHealth());
+        System.out.println("Str: " + ranger.getStrength());
+        System.out.println("Dex: " + ranger.getDexterity());
+        System.out.println("Int: " + ranger.getIntelligence());
+        System.out.println("Lvl: " + ranger.getLevel());
+        System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
+    }
+
+    public void changeEquipment() {
+        Hero warrior = new Warrior();
+        warrior.addArmor(new IronMeshChest(1));
+
+        System.out.println("Warrior details - Level 1 Armor:");
+        System.out.println("HP: " + warrior.getHealth());
+        System.out.println("Str: " + warrior.getStrength());
+        System.out.println("Dex: " + warrior.getDexterity());
+        System.out.println("Int: " + warrior.getIntelligence());
+        System.out.println("Lvl: " + warrior.getLevel());
+        System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+
+        System.out.println("Adding iron mesh chest");
+        warrior.addArmor(new IronMeshChest(20));
+
+        System.out.println("Warrior details - Level 20 Armor:");
+        System.out.println("HP: " + warrior.getHealth());
+        System.out.println("Str: " + warrior.getStrength());
+        System.out.println("Dex: " + warrior.getDexterity());
+        System.out.println("Int: " + warrior.getIntelligence());
+        System.out.println("Lvl: " + warrior.getLevel());
+        System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+
+        System.out.println("Switching out chest to lower level chest");
+        warrior.addArmor(new IronMeshChest(1));
+
+        System.out.println("Warrior details - Level 1 Armor:");
+        System.out.println("HP: " + warrior.getHealth());
+        System.out.println("Str: " + warrior.getStrength());
+        System.out.println("Dex: " + warrior.getDexterity());
+        System.out.println("Int: " + warrior.getIntelligence());
+        System.out.println("Lvl: " + warrior.getLevel());
+        System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
+    }
+
+    public void attacking() {
+        Hero mage = new Mage();
+
+        mage.attack();
+
+        Weapon weapon = new LesserMagicWand(5);
+        mage.addWeapon(weapon);
+
+        System.out.println("Giving Mage " + weapon.getName() + " level " + weapon.getLevel() + "!");
+
+        System.out.println("Attacking again");
+        mage.attack();
+
     }
 
 

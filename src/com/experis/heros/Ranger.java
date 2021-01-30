@@ -2,8 +2,18 @@ package com.experis.heros;
 
 public class Ranger extends Hero{
 
+    String type = "Ranger";
+
     public Ranger() {
         super(120, 5, 10, 2);
+    }
+
+    public void attack() {
+        if(this.weapon == null) {
+            System.out.println(this.type + " attacked for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
+        } else {
+            System.out.println(this.type + " attacked for " + damage + "HP using " + this.weapon.getType());
+        }
     }
 
     @Override
