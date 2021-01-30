@@ -35,6 +35,7 @@ public abstract class Hero {
     }
 
     public void attack() {
+        //Redundant method body content as method is overwritten by all Hero's
         System.out.println("Overwritten method this should not print");
     }
 

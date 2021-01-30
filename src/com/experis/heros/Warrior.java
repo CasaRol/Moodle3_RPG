@@ -11,9 +11,9 @@ public class Warrior extends Hero {
 
     public void attack() {
         if(this.weapon == null) {
-            System.out.println(this.type + " attacked for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
+            System.out.println(this.type + " attacks for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
         } else {
-            System.out.println(this.type + " attacked for " + damage + "HP using " + this.weapon.getType());
+            System.out.println(this.type + " attacks for " + damage + "HP using " + this.weapon.getType());
         }
     }
 
