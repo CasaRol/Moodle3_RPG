@@ -13,6 +13,7 @@ public class TwoHandedSword extends Melee{
     }
 
     private int calculateDamage() {
+        //calculates damage based on base stats and level
         return super.baseDamage + (super.scale * level);
     }
 

@@ -20,3 +20,5 @@ Below here I've added some images from the outputs:
 ![Option 5](ScreenShots/Option5.png)  
 
 ![Option 4](ScreenShots/Option4.png)
+
+Please feel free to fork or download the repo for your own testing.

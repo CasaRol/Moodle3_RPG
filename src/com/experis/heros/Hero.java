@@ -17,7 +17,6 @@ public abstract class Hero {
     Armor body;
     Armor legs;
     int damage = 0;
-    String type;
 
 
     public Hero(int health, int strength, int dexterity, int intelligence) {
@@ -125,6 +124,9 @@ public abstract class Hero {
     }
 
     private void removeArmorStats(String placement) {
+        //It could be done a lot smarter
+
+        //removed current armor from the slot where new armor is about tp be placed
         if(placement.equalsIgnoreCase("HEAD")) {
             if(head != null) {
                 System.out.println("HEAD FOUND EQUIPPED");
@@ -153,6 +155,7 @@ public abstract class Hero {
     }
 
     private void removeWeaponStats() {
+        //removes current weapon (if any)
         if(this.weapon != null) {
             this.damage -= (int) Math.round(this.weapon.getTotalDamage() + (strength * 1.5));
         }
@@ -204,6 +207,7 @@ public abstract class Hero {
     }
 
     public void setExp(double exp) {
+        //Entire leveling system done here as exp sets the preset for when leveling is needed
         if(exp > maxExp) {
 
             while (exp >= maxExp) {

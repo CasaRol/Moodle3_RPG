@@ -10,6 +10,8 @@ public class Ranger extends Hero{
 
     @Override
     public void attack() {
+        //Attacking based on weapon type
+        //could be done smarter
         if(this.weapon == null) {
             System.out.println(this.type + " attacks for " + damage + "HP using 'Bare Fists' (Equip weapon to deal damage)");
         } else {
@@ -25,6 +27,7 @@ public class Ranger extends Hero{
 
     @Override
     public void levelUp() {
+        //adding stats to whichever stat updates when leveling
         setLevel(level += 1);
         setHealth(health += 20);
         setStrength(strength += 2);

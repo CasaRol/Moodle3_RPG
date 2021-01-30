@@ -12,10 +12,6 @@ import com.experis.weapons.Weapon;
 
 public class display {
 
-    private final Hero warrior = new Warrior();
-    private final Hero mage= new Mage();
-    private final Hero ranger = new Ranger();
-
     public void displayLeveling() {
         Hero warrior = new Warrior();
         Hero mage= new Mage();

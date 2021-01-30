@@ -12,8 +12,9 @@ public class LesserMagicWand extends Magic{
         this.totalDamage = calculateDamage();
     }
 
-    //Should maybe be on the interface or abstract class but not sure how
+    //Should maybe be on the interface or abstract class
     private int calculateDamage() {
+        //calculates damage based on base stats and level
         return super.baseDamage + (super.scale * level);
     }
 

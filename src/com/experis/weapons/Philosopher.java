@@ -13,6 +13,7 @@ public class Philosopher extends Ranged {
     }
 
     private int calculateDamage() {
+        //calculates damage based on base stats and level
         return super.baseDamage + (super.scale * level);
     }
 
