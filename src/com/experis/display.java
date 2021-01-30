@@ -16,7 +16,7 @@ public class display {
         Hero warrior = new Warrior();
         Hero mage= new Mage();
         Hero ranger = new Ranger();
-        //Leveling showcased - Begin
+
         System.out.println("Warrior details (plain):");
         System.out.println("HP: " + warrior.getHealth());
         System.out.println("Str: " + warrior.getStrength());
@@ -83,8 +83,6 @@ public class display {
         System.out.println("Int: " + ranger.getIntelligence());
         System.out.println("Lvl: " + ranger.getLevel());
         System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
-
-        //leveling showcased - End
 
     }
 
@@ -285,6 +283,5 @@ public class display {
         mage.attack();
 
     }
-
 
 }

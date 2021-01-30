@@ -1,12 +1,5 @@
 package com.experis;
 
-import com.experis.amor.*;
-import com.experis.heros.Hero;
-import com.experis.heros.Warrior;
-import com.experis.weapons.LesserMagicWand;
-import com.experis.weapons.TwoHandedSword;
-import com.experis.weapons.Weapon;
-
 import java.util.Scanner;
 
 public class Main {
@@ -57,12 +50,6 @@ public class Main {
             }
         }
 
-
-
-
-
-
     }
-
 
 }
