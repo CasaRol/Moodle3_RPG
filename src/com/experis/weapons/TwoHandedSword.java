@@ -13,7 +13,7 @@ public class TwoHandedSword extends Melee{
     }
 
     private int calculateDamage() {
-        return super.baseDamage + (2 * level);
+        return super.baseDamage + (super.scale * level);
     }
 
     @Override

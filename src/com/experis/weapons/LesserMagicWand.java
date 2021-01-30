@@ -14,7 +14,7 @@ public class LesserMagicWand extends Magic{
 
     //Should maybe be on the interface or abstract class but not sure how
     private int calculateDamage() {
-        return super.baseDamage + (2 * level);
+        return super.baseDamage + (super.scale * level);
     }
 
     @Override

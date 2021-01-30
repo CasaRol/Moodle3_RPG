@@ -24,6 +24,7 @@ public class Main {
             System.out.println("3: Equip items to character");
             System.out.println("4: Change equipment on character");
             System.out.println("5: Simulate attack");
+            System.out.println("404: Exit program");
 
             switch(scan.nextInt()) {
                 case 1:
@@ -51,7 +52,7 @@ public class Main {
                     display.attacking();
                     System.out.println("____________________");
                     break;
-                case 999:
+                case 404:
                     System.exit(0);
             }
         }
