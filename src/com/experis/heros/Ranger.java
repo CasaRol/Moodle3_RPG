@@ -27,7 +27,7 @@ public class Ranger extends Hero{
 
     @Override
     public void levelUp() {
-        //adding stats to whichever stat updates when leveling
+        //Updates stats when leveling up
         setLevel(level += 1);
         setHealth(health += 20);
         setStrength(strength += 2);

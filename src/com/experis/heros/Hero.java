@@ -227,18 +227,4 @@ public abstract class Hero {
     public void setMaxExp(double maxExp) {
         this.maxExp = maxExp;
     }
-
-    //Redundant test methods below here
-
-    public Weapon getWeapon() {
-        return this.weapon;
-    }
-
-    public String getWeaponName() {
-        return this.weapon.getName();
-    }
-
-    public Armor getBody() {
-        return this.body;
-    }
 }

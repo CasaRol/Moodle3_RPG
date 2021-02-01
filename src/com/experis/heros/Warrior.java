@@ -28,7 +28,7 @@ public class Warrior extends Hero {
 
     @Override
     public void levelUp() {
-        //adding stats to whichever stat updates when leveling
+        //Updates stats when leveling up
         setLevel(level += 1);
         setHealth(health += 30);
         setStrength(strength += 5);
