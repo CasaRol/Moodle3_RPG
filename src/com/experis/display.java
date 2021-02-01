@@ -83,7 +83,6 @@ public class display {
         System.out.println("Int: " + ranger.getIntelligence());
         System.out.println("Lvl: " + ranger.getLevel());
         System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
-
     }
 
     public void createItems() {
@@ -149,7 +148,6 @@ public class display {
         System.out.println("Weapon type: " + wand.getType());
         System.out.println("Weapon level: " + wand.getLevel());
         System.out.println("Weapon damage: " + wand.getTotalDamage());
-
     }
 
     public void addItemsToHero() {
@@ -281,7 +279,6 @@ public class display {
 
         System.out.println("Attacking again");
         mage.attack();
-
     }
 
 }

@@ -9,5 +9,4 @@ public abstract class Ranged implements Weapon {
        public String getType() {
               return this.type;
        }
-
 }

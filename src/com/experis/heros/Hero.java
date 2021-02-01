@@ -39,11 +39,8 @@ public abstract class Hero {
     }
 
     private void addArmorStats(Armor armor, String placement) {
-
-
         //Removing current stats from armor
         removeArmorStats(placement);
-
 
         int health;
         int strength;
@@ -64,7 +61,6 @@ public abstract class Hero {
             dexterity = armor.getDexterity() + armor.getSCALE_DEXTERITY();
             setDexterity(this.dexterity += dexterity);
         }
-
         if(placement.equalsIgnoreCase("HEAD")) {
             health = (int) (armor.getHealth() + (Math.floor(armor.getSCALE_HEALTH()) * 0.8));
             setHealth(this.health += health);
@@ -78,7 +74,6 @@ public abstract class Hero {
             dexterity = (int) (armor.getDexterity() + (Math.floor(armor.getSCALE_DEXTERITY()) * 0.8));
             setDexterity(this.dexterity += dexterity);
         }
-
         if(placement.equalsIgnoreCase("LEGS")) {
             health = (int) (armor.getHealth() + (Math.floor(armor.getSCALE_HEALTH()) * 0.6));
             setHealth(this.health += health);
@@ -97,7 +92,6 @@ public abstract class Hero {
     private void addWeaponStats(Weapon weapon) {
         //Removing current weapon stats from Hero
         removeWeaponStats();
-
         this.damage += (int) Math.round(weapon.getTotalDamage() + (strength * 1.5));
     }
 
@@ -120,7 +114,6 @@ public abstract class Hero {
             //Should never reach this
             System.out.println("Incompatible armor type");
         }
-
     }
 
     private void removeArmorStats(String placement) {
@@ -209,7 +202,6 @@ public abstract class Hero {
     public void setExp(double exp) {
         //Entire leveling system done here as exp sets the preset for when leveling is needed
         if(exp > maxExp) {
-
             while (exp >= maxExp) {
                 this.exp = (exp -= maxExp);
 
