@@ -1,21 +1,19 @@
 package com.experis;
 
 import com.experis.amor.*;
-import com.experis.heros.Hero;
-import com.experis.heros.Mage;
-import com.experis.heros.Ranger;
-import com.experis.heros.Warrior;
-import com.experis.weapons.LesserMagicWand;
-import com.experis.weapons.Philosopher;
-import com.experis.weapons.TwoHandedSword;
-import com.experis.weapons.Weapon;
+import com.experis.heros.*;
+import com.experis.weapons.*;
 
 public class display {
 
+    HeroFactory heroFactory = new HeroFactory();
+    ArmorFactory armorFactory = new ArmorFactory();
+    WeaponFactory weaponFactory = new WeaponFactory();
+
     public void displayLeveling() {
-        Hero warrior = new Warrior();
-        Hero mage= new Mage();
-        Hero ranger = new Ranger();
+        Hero warrior = heroFactory.getHero("WARRIOR");
+        Hero mage = heroFactory.getHero("MAGE");
+        Hero ranger = heroFactory.getHero("RANGER");
 
         System.out.println("Warrior details (plain):");
         System.out.println("HP: " + warrior.getHealth());
@@ -89,7 +87,7 @@ public class display {
 
         System.out.println("ARMOR");
 
-        Armor cloth = new FabricHat(5);
+        Armor cloth = armorFactory.getArmor("FABRIC_HAT", 5);
         System.out.println("Item stats for: " + cloth.getName());
         System.out.println("Armor type: " + cloth.getType());
         System.out.println("Armor level: " + cloth.getLevel());
@@ -100,7 +98,7 @@ public class display {
 
         System.out.println(" ");
 
-        Armor leather = new LeatherLeggings(10);
+        Armor leather = armorFactory.getArmor("LEATHER_LEGGINGS", 10);
         System.out.println("Item stats for: " + leather.getName());
         System.out.println("Armor type: " + leather.getType());
         System.out.println("Armor level: " + leather.getLevel());
@@ -111,7 +109,7 @@ public class display {
 
         System.out.println(" ");
 
-        Armor plate = new IronMeshChest(15);
+        Armor plate = armorFactory.getArmor("IRON_MESH_CHEST", 15);
         System.out.println("Item stats for: " + plate.getName());
         System.out.println("Armor type: " + plate.getType());
         System.out.println("Armor level: " + plate.getLevel());
@@ -124,7 +122,7 @@ public class display {
 
         System.out.println("WEAPONS");
 
-        Weapon sword = new TwoHandedSword(5);
+        Weapon sword = weaponFactory.getWeapon("TWO_HANDED_SWORD", 5);
 
         System.out.println("Item stats for: " + sword.getName());
         System.out.println("Weapon type: " + sword.getType());
@@ -133,7 +131,7 @@ public class display {
 
         System.out.println(" ");
 
-        Weapon bow = new Philosopher(20);
+        Weapon bow = weaponFactory.getWeapon("PHILOSOPHER", 20);
 
         System.out.println("Item stats for: " + bow.getName());
         System.out.println("Weapon type: " + bow.getType());
@@ -142,7 +140,7 @@ public class display {
 
         System.out.println(" ");
 
-        Weapon wand = new LesserMagicWand(15);
+        Weapon wand = weaponFactory.getWeapon("LESSER_MAGIC_WAND", 15);
 
         System.out.println("Item stats for: " + wand.getName());
         System.out.println("Weapon type: " + wand.getType());
@@ -154,9 +152,9 @@ public class display {
 
         System.out.println("ADDING ITEMS TO HERO'S");
 
-        Hero warrior = new Warrior();
-        Hero mage= new Mage();
-        Hero ranger = new Ranger();
+        Hero warrior = heroFactory.getHero("WARRIOR");
+        Hero mage= heroFactory.getHero("MAGE");
+        Hero ranger = heroFactory.getHero("RANGER");
 
         System.out.println("Warrior details - Before:");
         System.out.println("HP: " + warrior.getHealth());
@@ -167,11 +165,11 @@ public class display {
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
 
         System.out.println("Adding iron mesh chest");
-        warrior.addArmor(new IronMeshChest(2));
+        warrior.addArmor(armorFactory.getArmor("IRON_MESH_CHEST", 2));
         System.out.println("Adding fabric hat");
-        warrior.addArmor(new FabricHat(5));
+        warrior.addArmor(armorFactory.getArmor("FABRIC_HAT", 5));
         System.out.println("Adding leather leggings");
-        warrior.addArmor(new LeatherLeggings(1));
+        warrior.addArmor(armorFactory.getArmor("LEATHER_LEGGINGS", 1));
 
         System.out.println("Warrior details - After:");
         System.out.println("HP: " + warrior.getHealth());
@@ -192,11 +190,11 @@ public class display {
         System.out.println("XP to next: " + (mage.getMaxExp() - mage.getExp()));
 
         System.out.println("Adding iron mesh chest");
-        mage.addArmor(new IronMeshChest(2));
+        mage.addArmor(armorFactory.getArmor("IRON_MESH_CHEST", 2));
         System.out.println("Adding fabric hat");
-        mage.addArmor(new FabricHat(5));
+        mage.addArmor(armorFactory.getArmor("FABRIC_HAT", 5));
         System.out.println("Adding leather leggings");
-        mage.addArmor(new LeatherLeggings(1));
+        mage.addArmor(armorFactory.getArmor("LEATHER_LEGGINGS" , 1));
 
         System.out.println("Mage details - After:");
         System.out.println("HP: " + mage.getHealth());
@@ -217,11 +215,11 @@ public class display {
         System.out.println("XP to next: " + (ranger.getMaxExp() - ranger.getExp()));
 
         System.out.println("Adding iron mesh chest");
-        ranger.addArmor(new IronMeshChest(2));
+        ranger.addArmor(armorFactory.getArmor("IRON_MESH_CHEST", 2));
         System.out.println("Adding fabric hat");
-        ranger.addArmor(new FabricHat(5));
+        ranger.addArmor(armorFactory.getArmor("FABRIC_HAT", 5));
         System.out.println("Adding leather leggings");
-        ranger.addArmor(new LeatherLeggings(1));
+        ranger.addArmor(armorFactory.getArmor("LEATHER_LEGGINGS", 1));
 
         System.out.println("Ranger details - After:");
         System.out.println("HP: " + ranger.getHealth());
@@ -233,8 +231,8 @@ public class display {
     }
 
     public void changeEquipment() {
-        Hero warrior = new Warrior();
-        warrior.addArmor(new IronMeshChest(1));
+        Hero warrior = heroFactory.getHero("WARRIOR");
+        warrior.addArmor(armorFactory.getArmor("IRON_MESH_CHEST" ,1));
 
         System.out.println("Warrior details - Level 1 Armor:");
         System.out.println("HP: " + warrior.getHealth());
@@ -245,7 +243,7 @@ public class display {
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
 
         System.out.println("Adding iron mesh chest");
-        warrior.addArmor(new IronMeshChest(20));
+        warrior.addArmor(armorFactory.getArmor("IRON_MESH_CHEST", 20));
 
         System.out.println("Warrior details - Level 20 Armor:");
         System.out.println("HP: " + warrior.getHealth());
@@ -256,7 +254,7 @@ public class display {
         System.out.println("XP to next: " + (warrior.getMaxExp() - warrior.getExp()));
 
         System.out.println("Switching out chest to lower level chest");
-        warrior.addArmor(new IronMeshChest(1));
+        warrior.addArmor(armorFactory.getArmor("IRON_MESH_CHEST", 1));
 
         System.out.println("Warrior details - Level 1 Armor:");
         System.out.println("HP: " + warrior.getHealth());
@@ -268,16 +266,16 @@ public class display {
     }
 
     public void attacking() {
-        Hero mage = new Mage();
+        Hero mage = heroFactory.getHero("MAGE");
 
         mage.attack();
 
-        Weapon weapon = new LesserMagicWand(5);
+        Weapon weapon = weaponFactory.getWeapon("LESSER_MAGIC_WAND", 5);
         mage.addWeapon(weapon);
 
-        System.out.println("Giving Mage " + weapon.getName() + " level " + weapon.getLevel() + "!");
+        System.out.println("Giving Mage '" + weapon.getName() + "' level " + weapon.getLevel() + "!");
 
-        System.out.println("Attacking again");
+        System.out.println("Attacking again...");
         mage.attack();
     }
 

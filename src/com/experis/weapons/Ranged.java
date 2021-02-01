@@ -6,6 +6,7 @@ public abstract class Ranged implements Weapon {
        int scale = 3;
        String type = "Ranged";
 
+
        public String getType() {
               return this.type;
        }
